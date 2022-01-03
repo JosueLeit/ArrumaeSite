@@ -70,13 +70,13 @@ span {
 
 .button {
   background-color: var(--colorPurple);
-  height: 3.5rem;
+  height: fit-content;
   display: inline-flex;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 0.25rem;
   transition: background 0.3s;
-  font: 1200 1rem var(--body-font);
+  font: 1200 0.5rem var(--body-font);
 }
 .button:hover {
   background: var(#ee9ad9);
@@ -438,10 +438,15 @@ nav.show div.icon-close {
   justify-content: center;
 }
 
-#contact .button i,
+#contact .buttonlink {
+  background-color: var(--colorPurple);
+  font-display: center;
+  padding: 0.5rem 0.5rem 1.4rem 1.4rem;
+}
+
+#contact .buttonlink i,
 #contact ul li i {
   font-size: 2rem;
-  /*margin-right: 0.625rem;*/
   font-display: center;
   transition: 0.3s;
 }
@@ -453,6 +458,7 @@ nav.show div.icon-close {
 #contact ul.grid {
   gap: 1rem;
   font-weight: bold;
+  vertical-align: center;
 }
 #contact li {
   align-items: center;
@@ -526,14 +532,16 @@ footer .social a {
 
 @media (min-width: 1200px) {
   main {
-    margin-top: calc(var(--header-height)+ 6rem);
+    margin-top: calc(var(--header-height)+ 9rem);
   }
   .container logo {
     max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
   }
-
+  header .logo {
+    width: 16rem;
+  }
   .section {
     padding: 10rem 0;
   }
@@ -578,7 +586,8 @@ footer .social a {
   #home .container {
     grid-auto-flow: column;
     justify-content: space-between;
-    margin: 1rem auto;
+    margin: auto;
+    margin-top: calc(var(--header-height)-6rem);
   }
 
   #home .image {
@@ -587,14 +596,25 @@ footer .social a {
 
   #home .text {
     order: 1;
-    max-width: 24rem;
-    text-align: left;
+    max-width: 28rem;
+    text-align: center;
+    padding: 5rem 5rem 0.5rem 0.5rem;
+    margin-top: 4rem;
   }
 
   /* About */
   #about .container {
-    margin: 0 auto;
+    margin: 0 2rem;
     grid-auto-flow: column;
+    padding: auto;
+    justify-content: space-between;
+  }
+
+  #about .text {
+    /* max-width: 35rem; */
+    padding: 5rem 5rem 10rem 10rem;
+    align-items: center;
+    font-size: 1.4rem;
   }
   /* nav .menu ul li a.title {
   } */
