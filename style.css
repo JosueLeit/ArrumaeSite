@@ -125,9 +125,11 @@ body {
 }
 
 /*========= LOGO ===================================*/
-/* .logo {
-  font: 700 1.875rem 'Poppins', sans-serif;
-} */
+#header .logo {
+  margin-top: 10%;
+  width: 60%;
+  height: 80%;
+}
 a.image .logo {
   position: relative;
   display: flex;
@@ -135,8 +137,8 @@ a.image .logo {
 }
 
 #footer .logo-alt {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   object-fit: cover;
   clip-path: circle();
   margin-right: 0.5rem;
@@ -521,14 +523,13 @@ footer.section {
 }
 
 footer .grid {
-  /* display: grid; */
   gap: 0rem;
   align-items: center;
   margin-top: 1rem;
 }
 footer p {
   color: var(--text-color-light);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   margin-top: 0rem;
   align-items: center;
   padding: 1rem 1rem;
@@ -550,10 +551,10 @@ footer .social a {
   right: 1rem;
   bottom: 1rem;
 
-  padding: 0.5rem;
+  padding: 1rem;
   clip-path: circle();
-  font-size: 1.5rem;
-  line-height: 0;
+  font-size: 2rem;
+  line-height: 3;
   visibility: hidden;
   opacity: 0;
   transition: 0.3s;
@@ -736,11 +737,11 @@ footer .social a {
     --subtitle-font-size: 1.125rem;
   }
   main {
-    margin-top: calc(var(--header-height)+ 2rem);
+    margin-top: calc(var(--header-height)+ 9rem);
   }
 }
 @media (min-width: 767px) {
   main {
-    margin-top: calc(var(--header-height));
+    margin-top: calc(var(--header-height)+9rem);
   }
 }
