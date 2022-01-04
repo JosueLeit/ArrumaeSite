@@ -64,9 +64,9 @@ body {
   color: var(#38bced);
   -webkit-font-smoothing: auto;
 }
-span {
+/* span {
   color: #9b78b4;
-}
+} */
 
 .button {
   background-color: var(--colorPurple);
@@ -100,6 +100,30 @@ span {
   background: linear-gradient(270deg, #38bced 0%, #9b78b4 100%);
 }
 
+/*============ LAYOUT =========================*/
+
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1rem;
+  margin-top: -0.5rem;
+}
+
+.section {
+  padding: calc(var(--header-height)+7rem) 0;
+}
+
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
+}
+
+.section header {
+  margin-bottom: 4rem;
+}
+
 /*========= LOGO ===================================*/
 /* .logo {
   font: 700 1.875rem 'Poppins', sans-serif;
@@ -123,12 +147,12 @@ a.image .logo {
   margin-bottom: 1rem;
   display: flex;
 
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   background-color: var(--body-color);
+  width: 100%;
 }
 
 #header.scroll {
@@ -149,7 +173,7 @@ nav ul li {
   text-align: center;
 }
 
-nav ul li a:hover {
+nav ul li a {
   transition: 0.2s;
   position: relative;
 }
@@ -160,7 +184,7 @@ nav ul li a:hover {
 
 nav ul li a::after {
   content: '';
-  width: 0;
+  width: 0%;
   height: 2px;
   background-color: var(--colorPurple);
 
@@ -172,13 +196,8 @@ nav ul li a::after {
 }
 
 nav ul li a:hover::after,
-nav ul li a:active::after {
+nav ul li a.active::after {
   width: 100%;
-}
-
-/*========MOSTRAR MENU =================================*/
-nav.show ul.grid {
-  gap: 4rem;
 }
 
 nav .menu {
@@ -188,13 +207,21 @@ nav .menu {
   transition: 0.2s;
 }
 
+nav .menu ul {
+  display: none;
+}
+
+/*========MOSTRAR MENU =================================*/
+
 nav.show .menu {
   opacity: 1;
   visibility: visible;
+
   background: var(--body-color);
 
   height: 100vh;
   width: 100vw;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -203,30 +230,11 @@ nav.show .menu {
   place-content: center;
 }
 
-nav .show .menu ul {
+nav.show .menu ul {
   display: grid;
 }
-
-.container {
-  margin-left: 1.5rem;
-  margin-right: 1rem;
-  margin-top: -0.5rem;
-}
-
-.section {
-  padding: calc(var(--header-height)+7rem) 0;
-}
-
-.section .title {
-  margin-bottom: 1rem;
-}
-
-.section .subtitle {
-  font-size: var(--subtitle-font-size);
-}
-
-.section header {
-  margin-bottom: 4rem;
+nav.show ul.grid {
+  gap: 4rem;
 }
 
 /*===========TOGGLE MENU =======================================*/
@@ -261,6 +269,11 @@ nav.show div.icon-close {
 #home .container {
   margin: 0;
 }
+
+#home .image {
+  position: relative;
+}
+
 #home .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -277,9 +290,6 @@ nav.show div.icon-close {
   margin-bottom: 2rem;
 }
 
-#home .image {
-  position: relative;
-}
 #home .image img {
   position: relative;
   right: 0.5rem;
@@ -352,7 +362,11 @@ nav.show div.icon-close {
   height: 2rem;
   object-fit: cover;
   clip-path: circle();
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
+}
+
+#testimonials {
+  overflow: hidden;
 }
 
 /*================ABOUT============================*/
@@ -379,7 +393,8 @@ nav.show div.icon-close {
 
 #about .image img {
   position: relative;
-  right: 0.5rem;
+  right: 1rem;
+  /* height: 100%; "consertou a responsividade do content atras da img" */
 }
 
 #about .image img,
@@ -390,6 +405,8 @@ nav.show div.icon-close {
   margin-left: 1.5rem;
   margin-top: 1.5rem;
 }
+
+/*===========services======================================*/
 
 .cards.grid {
   gap: 1.5rem;
@@ -406,7 +423,7 @@ nav.show div.icon-close {
 .card i {
   display: block;
   margin-bottom: 1.5rem;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--colorPurple);
 }
 
@@ -441,7 +458,7 @@ nav.show div.icon-close {
 #contact .buttonlink {
   background-color: var(--colorPurple);
   font-display: center;
-  padding: 0.5rem 0.5rem 1.4rem 1.4rem;
+  padding: 1rem 0.5rem 1.4rem 1.4rem; /*alinhamento txt botão */
 }
 
 #contact .buttonlink i,
@@ -449,6 +466,31 @@ nav.show div.icon-close {
   font-size: 2rem;
   font-display: center;
   transition: 0.3s;
+}
+
+#contact i.icon-apple {
+  /*alinhamento icones meio botão */
+  vertical-align: middle;
+}
+
+#contact i.icon-googleplay {
+  /*alinhamento icones meio botão */
+  vertical-align: middle;
+}
+
+#contact i.icon-instagram {
+  /*alinhamento icones meio botão */
+  vertical-align: middle;
+}
+
+#contact i.icon-mail {
+  /*alinhamento icones meio botão */
+  vertical-align: middle;
+}
+
+#contact i.icon-whatsapp {
+  /*alinhamento icones meio botão */
+  vertical-align: middle;
 }
 
 #contact .links a:hover {
@@ -543,15 +585,14 @@ footer .social a {
     width: 16rem;
   }
   .section {
-    padding: 10rem 0;
+    padding: 6rem 2rem;
   }
 
-  .section header,
-  #testimonials header {
-    max-width: 32rem;
+  .section h2.title {
+    /* max-width: 32rem; */
     text-align: center;
-    margin-left: auto;
-    margin-bottom: auto;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
   }
 
   .button {
@@ -575,7 +616,7 @@ footer .social a {
 
   nav .menu ul li a.title.active {
     font-weight: bold;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: auto;
   }
 
   nav .icon-menu {
@@ -586,43 +627,56 @@ footer .social a {
   #home .container {
     grid-auto-flow: column;
     justify-content: space-between;
-    margin: auto;
+    /* max-height: fit-content; */
     margin-top: calc(var(--header-height)-6rem);
+    margin-left: 2rem;
   }
 
   #home .image {
     order: 0;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 0rem 2rem 0rem;
   }
 
   #home .text {
     order: 1;
-    max-width: 28rem;
+    max-width: 24rem;
+    margin-right: 10%;
     text-align: center;
-    padding: 5rem 5rem 0.5rem 0.5rem;
+    padding: 0rem 1rem 1.5rem 0rem;
     margin-top: 4rem;
   }
 
   /* About */
   #about .container {
-    margin: 0 2rem;
+    margin: 2 0rem;
     grid-auto-flow: column;
-    padding: auto;
-    justify-content: space-between;
   }
 
+  #about .image::before {
+    height: 100%;
+    width: 100%;
+  }
   #about .text {
+    order: 0;
     /* max-width: 35rem; */
-    padding: 5rem 5rem 10rem 10rem;
+    padding: 2rem 2rem 0rem 5rem;
     align-items: center;
     font-size: 1.4rem;
+    margin: auto;
   }
-  /* nav .menu ul li a.title {
-  } */
-
+  #about .image {
+    order: 1;
+  }
   /* testimonials */
   #testimonials .container {
     margin-left: auto;
     margin-right: auto;
+  }
+  #testimonials .grid {
+    padding: 2rem 2rem 2rem 2rem;
+    width: 1rem;
   }
 
   /* services */
@@ -633,6 +687,18 @@ footer .social a {
   .card {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  #services header p {
+    align-items: center;
+    padding: 1rem 10rem 1rem 10rem;
+    font-size: 28px;
+  }
+
+  #services h2 {
+    display: grid;
+    justify-content: center;
+    text-align: center;
   }
 
   /* CONTATO */
