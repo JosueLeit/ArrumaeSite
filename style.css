@@ -450,15 +450,16 @@ nav.show div.icon-close {
 }
 
 #contact ul li {
-  font-display: var(--colorBlue);
+  font-display: var(--colorPurple);
   display: flex;
   justify-content: center;
 }
 
 #contact .buttonlink {
-  background-color: var(--colorPurple);
+  background-color: var(--colorGray);
   font-display: center;
-  padding: 1rem 0.5rem 1.4rem 1.4rem; /*alinhamento txt botão */
+  padding: 1rem 0.5rem 1rem 1rem; /*alinhamento txt botão */
+  border-radius: 0.65rem;
 }
 
 #contact .buttonlink i,
