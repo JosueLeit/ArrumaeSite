@@ -53,6 +53,12 @@ html {
   scroll-behavior: smooth;
 }
 
+a img {
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  width: fit-content;
+  height: fit-content;
+}
+
 body {
   font: 400 1rem var(--body-font);
   color: var(--text-color);
@@ -125,10 +131,10 @@ body {
 }
 
 /*========= LOGO ===================================*/
-#header .logo {
+/* #header .logo {
   margin-top: 10%;
   width: 60%;
-  height: 80%;
+  height: 80%; */
 }
 a.image .logo {
   position: relative;
