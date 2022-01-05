@@ -134,8 +134,8 @@ body {
 /* #header .logo {
   margin-top: 10%;
   width: 60%;
-  height: 80%; */
-}
+  height: 80%;
+}*/
 a.image .logo {
   position: relative;
   display: flex;
@@ -749,5 +749,11 @@ footer .social a {
 @media (min-width: 767px) {
   main {
     margin-top: calc(var(--header-height)+9rem);
+  }
+}
+
+@media (max-width: 767px) {
+  #logo {
+    width: 10rem;
   }
 }
