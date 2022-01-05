@@ -444,6 +444,12 @@ nav.show div.icon-close {
   height: auto;
   padding: 4rem 1rem;
 }
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
 .swiper-pagination-bullet-active {
   background-color: var(--colorPurple);
 }
